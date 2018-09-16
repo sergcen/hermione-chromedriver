@@ -1,11 +1,13 @@
-const wdioChromedriverService = require('wdio-chromedriver-service/launcher');
+const ChromeDriverLauncher = require('./ChromeDriverLauncher');
+
+const chromeDriverLauncher = new ChromeDriverLauncher();
 
 module.exports = function(hermione, opts) {
     hermione.on(hermione.events.INIT, () => {
-        wdioChromedriverService.onPrepare(opts);
+        chromeDriverLauncher.start(opts);
     });
 
     hermione.on(hermione.events.EXIT, () => {
-        wdioChromedriverService.onComplete();
+        chromeDriverLauncher.stop();
     });
 };
