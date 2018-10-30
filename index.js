@@ -7,7 +7,7 @@ module.exports = function(hermione, opts) {
         chromeDriverLauncher.start(opts);
     });
 
-    hermione.on(hermione.events.EXIT, () => {
+    hermione.on(hermione.events.RUNNER_END, () => {
         chromeDriverLauncher.stop();
     });
 };
