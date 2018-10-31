@@ -34,7 +34,8 @@ class ChromeDriverLauncher {
 
     stop() {
         if (this.process) {
-            this.process.kill()
+            this.process.kill();
+            this.process = null;
         }
     }
 }
