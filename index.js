@@ -9,7 +9,7 @@ module.exports = function(hermione, opts) {
 
     const stopHandler = () => {
         chromeDriverLauncher.stop();
-    }
+    };
 
     hermione
         .on(hermione.events.RUNNER_END, stopHandler)
